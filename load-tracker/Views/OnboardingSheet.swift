@@ -58,7 +58,7 @@ struct OnboardingSheet: View {
                 .frame(width: 28, height: 28)
                 .background(Color.Primitive.amberGlow, in: RoundedRectangle(cornerRadius: AppRadius.icon))
             Text(text)
-                .font(AppFont.body(AppFont.Size.body))
+                .font(AppFont.body(AppFont.Size.labelLG))
                 .foregroundStyle(Color.App.textPrimary)
         }
     }
