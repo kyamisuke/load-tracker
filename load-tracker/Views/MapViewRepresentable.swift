@@ -103,12 +103,12 @@ struct MapViewRepresentable: UIViewRepresentable {
             }
             let renderer = MKPolylineRenderer(polyline: polyline)
             if polyline.title == "lowAccuracy" {
-                renderer.strokeColor = .systemGray
+                renderer.strokeColor = .appDust
                 renderer.lineWidth = 2
                 renderer.lineDashPattern = [8, 4]
             } else {
-                renderer.strokeColor = .systemBlue
-                renderer.lineWidth = 3
+                renderer.strokeColor = .appAmber
+                renderer.lineWidth = 4
             }
             return renderer
         }
@@ -119,7 +119,7 @@ struct MapViewRepresentable: UIViewRepresentable {
             let view = mapView.dequeueReusableAnnotationView(withIdentifier: id) as? MKMarkerAnnotationView
                 ?? MKMarkerAnnotationView(annotation: stayAnnotation, reuseIdentifier: id)
             view.annotation = stayAnnotation
-            view.markerTintColor = .systemOrange
+            view.markerTintColor = .appAmber
             view.glyphImage = UIImage(systemName: "mappin.circle.fill")
             view.canShowCallout = true
             return view

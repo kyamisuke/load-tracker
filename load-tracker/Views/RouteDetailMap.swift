@@ -40,19 +40,20 @@ struct RouteDetailMap: View {
     }
 
     private var timeFilter: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: AppSpacing.xs) {
             Text("時間帯フィルタ")
-                .font(.caption)
-                .foregroundStyle(.secondary)
+                .font(AppFont.body(AppFont.Size.caption))
+                .foregroundStyle(Color.App.textSecondary)
             HStack {
                 DatePicker("開始", selection: $filterStart, in: record.startedAt...(record.stoppedAt ?? Date()), displayedComponents: .hourAndMinute)
                     .labelsHidden()
                 Text("→")
+                    .foregroundStyle(Color.App.textFaint)
                 DatePicker("終了", selection: $filterEnd, in: record.startedAt...(record.stoppedAt ?? Date()), displayedComponents: .hourAndMinute)
                     .labelsHidden()
             }
         }
-        .padding()
-        .background(.ultraThinMaterial)
+        .padding(AppSpacing.md)
+        .background(Color.App.bgSurface)
     }
 }

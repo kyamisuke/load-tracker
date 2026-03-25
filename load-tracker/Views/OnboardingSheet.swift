@@ -5,28 +5,29 @@ struct OnboardingSheet: View {
     var onStart: () async throws -> Void
 
     var body: some View {
-        VStack(spacing: 32) {
+        VStack(spacing: AppSpacing.xl) {
             Spacer()
 
             Image(systemName: "figure.walk.motion")
                 .font(.system(size: 80))
-                .foregroundStyle(.blue)
+                .foregroundStyle(Color.Primitive.amber)
 
-            VStack(spacing: 12) {
-                Text("経路トラッカー")
-                    .font(.largeTitle.bold())
-                Text("歩いた道を自動で記録します")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
+            VStack(spacing: AppSpacing.sm) {
+                Text("あしあと")
+                    .font(AppFont.display(AppFont.Size.display))
+                    .foregroundStyle(Color.App.textPrimary)
+                Text("昨日どこいったっけ？\n歩いた道をこっそり自動記録します")
+                    .font(AppFont.body(AppFont.Size.body))
+                    .foregroundStyle(Color.App.textSecondary)
             }
 
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: AppSpacing.md) {
                 featureRow(icon: "location.fill", text: "バックグラウンドで自動記録")
                 featureRow(icon: "map.fill", text: "地図上で経路を確認")
-                featureRow(icon: "mappin.circle.fill", text: "滞在スポットを自動検出")
+                featureRow(icon: "mappin.circle.fill", text: "立ち寄りスポットを自動検出")
                 featureRow(icon: "lock.shield.fill", text: "データは端末内のみに保存")
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal, AppSpacing.xl)
 
             Spacer()
 
@@ -36,25 +37,29 @@ struct OnboardingSheet: View {
                     dismiss()
                 }
             } label: {
-                Text("記録を開始")
-                    .font(.headline)
-                    .foregroundStyle(.white)
+                Text("記録を始める")
+                    .font(Token.Button.font)
+                    .foregroundStyle(Token.Button.primaryFg)
                     .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.blue, in: RoundedRectangle(cornerRadius: 16))
+                    .frame(height: Token.Button.height)
+                    .background(Token.Button.primaryBg, in: RoundedRectangle(cornerRadius: Token.Button.radius))
+                    .appShadow(Token.Button.primaryShadow)
             }
-            .padding(.horizontal, 24)
-            .padding(.bottom, 16)
+            .padding(.horizontal, AppSpacing.lg)
+            .padding(.bottom, AppSpacing.md)
         }
+        .background(Color.App.bgPrimary)
     }
 
     private func featureRow(icon: String, text: String) -> some View {
-        HStack(spacing: 12) {
+        HStack(spacing: AppSpacing.sm) {
             Image(systemName: icon)
-                .foregroundStyle(.blue)
-                .frame(width: 28)
+                .foregroundStyle(Color.Primitive.amber)
+                .frame(width: 28, height: 28)
+                .background(Color.Primitive.amberGlow, in: RoundedRectangle(cornerRadius: AppRadius.icon))
             Text(text)
-                .font(.body)
+                .font(AppFont.body(AppFont.Size.body))
+                .foregroundStyle(Color.App.textPrimary)
         }
     }
 }

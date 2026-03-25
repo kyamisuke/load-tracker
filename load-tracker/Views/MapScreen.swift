@@ -53,6 +53,7 @@ struct MapScreen: View {
                     hasSeenOnboarding = true
                     try await trackingService.startRecording()
                 }
+                .presentationBackground(Color.App.bgPrimary)
             }
         }
     }

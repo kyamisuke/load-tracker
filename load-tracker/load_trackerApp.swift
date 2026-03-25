@@ -36,6 +36,8 @@ struct load_trackerApp: App {
     var body: some Scene {
         WindowGroup {
             MapScreen(trackingService: trackingService)
+                .preferredColorScheme(.dark)
+                .tint(Color.Primitive.amber)
         }
         .modelContainer(modelContainer)
     }
