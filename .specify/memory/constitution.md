@@ -1,9 +1,10 @@
 <!--
   Sync Impact Report
-  Version change: N/A (template) → 1.0.0
-  Modified principles: All new (template → concrete)
-  Added sections: Core Principles (5), Technical Constraints, Quality Gates, Governance
-  Removed sections: None (template placeholders replaced)
+  Version change: 1.0.0 → 1.0.1
+  Modified principles:
+    - IV. Testable Architecture: "XCTest MUST be used" → "Swift Testing framework MUST be used for unit tests; XCTest for UI tests"
+  Added sections: None
+  Removed sections: None
   Templates requiring updates:
     - .specify/templates/plan-template.md: ✅ No changes needed (Constitution Check section is generic)
     - .specify/templates/spec-template.md: ✅ No changes needed (structure compatible)
@@ -44,7 +45,7 @@
 
 - Business logic (location processing, stay detection, storage management) MUST be separated from UI and framework code
 - Core services MUST depend on protocols, not concrete implementations, to enable unit testing without device sensors
-- XCTest MUST be used for all automated tests
+- Swift Testing framework (`import Testing`, `@Test`, `#expect`) MUST be used for unit tests; XCTest is permitted for UI tests only
 - Each user story MUST have at least one integration-level test validating its acceptance scenarios
 - Rationale: Location-dependent code is hard to test; architecture must make it possible
 
@@ -67,7 +68,7 @@
 
 ## Quality Gates
 
-- **Pre-merge gate**: All XCTest tests pass on simulator
+- **Pre-merge gate**: All tests (Swift Testing + XCTest UI tests) pass on simulator
 - **Performance gate**: 6-hour background recording battery test ≤ 15% drain (manual, pre-release)
 - **Rendering gate**: Map with 6 hours of route data renders in ≤ 2 seconds on oldest supported device
 - **Privacy gate**: No outbound network requests detected during full usage session (verified via Network Link Conditioner or proxy)
@@ -80,4 +81,4 @@
 - Complexity that violates a principle MUST be justified in the plan's Complexity Tracking table
 - If a principle blocks progress, escalate and document — do not silently bypass
 
-**Version**: 1.0.0 | **Ratified**: 2026-03-20 | **Last Amended**: 2026-03-20
+**Version**: 1.0.1 | **Ratified**: 2026-03-20 | **Last Amended**: 2026-03-25
