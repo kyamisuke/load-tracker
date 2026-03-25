@@ -1,0 +1,138 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "8A8213D5",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "160",
+      "familyShareable" : false,
+      "internalID" : "TIP_COFFEE_001",
+      "localizations" : [
+        {
+          "description" : "開発者へのサポートです",
+          "displayName" : "コーヒー1杯",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "tip_coffee",
+      "referenceName" : "Coffee Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "500",
+      "familyShareable" : false,
+      "internalID" : "TIP_LUNCH_002",
+      "localizations" : [
+        {
+          "description" : "開発者へのサポートです",
+          "displayName" : "ランチ1回",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "tip_lunch",
+      "referenceName" : "Lunch Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1500",
+      "familyShareable" : false,
+      "internalID" : "TIP_DINNER_003",
+      "localizations" : [
+        {
+          "description" : "開発者へのサポートです",
+          "displayName" : "ディナー1回",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "tip_dinner",
+      "referenceName" : "Dinner Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3000",
+      "familyShareable" : false,
+      "internalID" : "TIP_FEAST_004",
+      "localizations" : [
+        {
+          "description" : "開発者へのサポートです",
+          "displayName" : "ごちそう",
+          "locale" : "ja"
+        }
+      ],
+      "productID" : "tip_feast",
+      "referenceName" : "Feast Tip",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6761118735",
+    "_developerTeamID" : "RW9N8FZHM7",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 796145411.74502099,
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

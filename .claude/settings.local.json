@@ -32,7 +32,8 @@
       "Bash(fc-scan --format \"%{postscriptname}\\\\n%{family}\\\\n%{fullname}\\\\n\" /Users/kosukemurakami/Desktop/projects/me/load-tracker/load-tracker/Resources/Fonts/Nunito-Variable.ttf)",
       "Bash(otfinfo -p /Users/kosukemurakami/Desktop/projects/me/load-tracker/load-tracker/Resources/Fonts/Nunito-Variable.ttf)",
       "Bash(python3 -c \":*)",
-      "Bash(mdls:*)"
+      "Bash(mdls:*)",
+      "Bash(xcodebuild -project load-tracker.xcodeproj -scheme load-tracker -destination 'generic/platform=iOS Simulator' build 2>&1 | grep -E \"error:|BUILD\")"
     ]
   }
 }

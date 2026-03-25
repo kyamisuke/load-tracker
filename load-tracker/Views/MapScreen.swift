@@ -6,6 +6,7 @@ struct MapScreen: View {
     @Query(sort: \RouteRecord.startedAt, order: .reverse)
     private var records: [RouteRecord]
     @State private var showOnboarding = false
+    @State private var showTipJar = false
     @State private var centerOnUser = true
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
 
@@ -42,6 +43,14 @@ struct MapScreen: View {
                         Image(systemName: "clock.arrow.circlepath")
                     }
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showTipJar = true
+                    } label: {
+                        Image(systemName: "cup.and.saucer")
+                            .foregroundStyle(Color.Primitive.amber)
+                    }
+                }
             }
             .onAppear {
                 if !hasSeenOnboarding && records.isEmpty {
@@ -54,6 +63,10 @@ struct MapScreen: View {
                     try await trackingService.startRecording()
                 }
                 .presentationBackground(Color.App.bgPrimary)
+            }
+            .sheet(isPresented: $showTipJar) {
+                TipJarSheet()
+                    .presentationBackground(Color.App.bgPrimary)
             }
         }
     }
