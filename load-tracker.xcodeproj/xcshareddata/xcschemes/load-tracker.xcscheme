@@ -74,6 +74,9 @@
             ReferencedContainer = "container:load-tracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <StoreKitConfigurationFileReference
+         identifier = "../../load-tracker/Resources/&#x3068;&#x3099;&#x3053;&#x307f;&#x3061;.storekit">
+      </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
